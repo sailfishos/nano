@@ -1,0 +1,20 @@
+Name: nano
+Summary: A small text editor
+Version: 2.2.4
+Release: 3
+Group: Applications/Editors
+License: GPLv2+
+URL: http://www.nano-editor.org
+Sources:
+    - http://www.nano-editor.org/dist/v2.2/%{name}-%{version}.tar.gz
+Description: GNU nano is a small and friendly text editor.
+
+PkgConfigBR: 
+    - ncurses
+PkgBR:
+    - autoconf
+    - gettext-devel
+    - groff
+ConfigOptions:
+    - --enable-all
+LocaleName: nano

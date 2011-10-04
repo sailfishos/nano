@@ -1,0 +1,7 @@
+<package project="Mer:Trunk:Base" name="nano">
+  <title>A small text editor</title>
+  <description>GNU nano is a small and friendly text editor.
+
+</description>
+  <url>http://www.nano-editor.org</url>
+</package>
