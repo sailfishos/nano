@@ -1,3 +1,6 @@
+* Sat Nov 26 2011 Carsten Munk <carsten@merproject.org> - 2.2.4
+- Don't add timestamps. This causes cvs to rebuild, then gcc..
+
 * Tue Apr 20 2010 Zhang, Qiang Z<qiang.z.zhang@intel.com> 2.2.4
 - Update to 2.2.4, Fix BMC#1016
 
