@@ -1,3 +1,8 @@
+* Tue Dec 13 2011 Carsten Munk <carsten@merproject.org> - 2.2.6
+- Add -ltinfo to get builds working
+- Switch license to GPLv3, its true license
+- Upgrade to 2.2.6
+
 * Sat Nov 26 2011 Carsten Munk <carsten@merproject.org> - 2.2.4
 - Don't add timestamps. This causes cvs to rebuild, then gcc..
 

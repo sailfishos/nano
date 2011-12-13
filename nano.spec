@@ -7,14 +7,15 @@
 
 Name:       nano
 Summary:    A small text editor
-Version:    2.2.4
+Version:    2.2.6
 Release:    3
 Group:      Applications/Editors
-License:    GPLv2+
+License:    GPLv3
 URL:        http://www.nano-editor.org
 Source0:    http://www.nano-editor.org/dist/v2.2/%{name}-%{version}.tar.gz
 Source100:  nano.yaml
 Patch0:     nano-2.2.4-notimestamp.patch
+Patch1:     nano-2.2.6-tinfo.patch
 Requires(post): /sbin/install-info
 Requires(postun): /sbin/install-info
 BuildRequires:  pkgconfig(ncurses)
@@ -33,6 +34,8 @@ GNU nano is a small and friendly text editor.
 
 # nano-2.2.4-notimestamp.patch
 %patch0 -p1
+# nano-2.2.6-tinfo.patch
+%patch1 -p1
 # >> setup
 # << setup
 
@@ -40,7 +43,7 @@ GNU nano is a small and friendly text editor.
 # >> build pre
 # << build pre
 
-%configure --disable-static \
+%reconfigure --disable-static \
     --enable-all
 
 make %{?jobs:-j%jobs}
