@@ -1,0 +1,16 @@
+* Tue Dec 13 2011 Carsten Munk <carsten@merproject.org> - 2.2.6
+- Add -ltinfo to get builds working
+- Switch license to GPLv3, its true license
+- Upgrade to 2.2.6
+
+* Sat Nov 26 2011 Carsten Munk <carsten@merproject.org> - 2.2.4
+- Don't add timestamps. This causes cvs to rebuild, then gcc..
+
+* Tue Apr 20 2010 Qiang Zhang <qiang.z.zhang@intel.com> - 2.2.4
+- Update to 2.2.4, Fix BMC#1016
+
+* Sun Mar 21 2010 Anas Nashif <anas.nashif@intel.com> - 2.0.9
+- Use spectacle
+
+* Fri Sep 25 2009 Anas Nashif <anas.nashif@intel.com> - 2.0.9
+- Initial import into Moblin
