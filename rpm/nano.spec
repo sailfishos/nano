@@ -6,6 +6,7 @@ Group:      Applications/Editors
 License:    GPLv3
 URL:        http://www.nano-editor.org
 Source0:    %{name}-%{version}.tar.bz2
+Patch0:     0001-autogen-Do-not-fetch-sources-at-the-build-time.patch
 Requires(post): /sbin/install-info
 Requires(postun): /sbin/install-info
 BuildRequires:  pkgconfig(ncurses)
@@ -14,13 +15,13 @@ BuildRequires:  gettext-devel
 BuildRequires:  groff
 BuildRequires:  sed
 BuildRequires:  texinfo
-BuildRequires:  git
 
 %description
 GNU nano is a small and friendly text editor.
 
 %prep
 %setup -q -n %{name}-%{version}/upstream
+%patch0 -p1
 
 %build
 ./autogen.sh
