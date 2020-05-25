@@ -11,7 +11,6 @@ BuildRequires:  pkgconfig(ncurses)
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  gettext-devel
-BuildRequires:  groff
 BuildRequires:  sed
 BuildRequires:  texinfo
 
