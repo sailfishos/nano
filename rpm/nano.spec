@@ -2,7 +2,6 @@ Name:       nano
 Summary:    A small text editor
 Version:    2.8.5
 Release:    1
-Group:      Applications/Editors
 License:    GPLv3
 URL:        http://www.nano-editor.org
 Source0:    %{name}-%{version}.tar.bz2
@@ -19,7 +18,6 @@ GNU nano is a small and friendly text editor.
 
 %package doc
 Summary:   Documentation for %{name}
-Group:     Documentation
 Requires:  %{name} = %{version}-%{release}
 Requires(post): /sbin/install-info
 Requires(postun): /sbin/install-info
@@ -28,8 +26,7 @@ Requires(postun): /sbin/install-info
 Man and info pages for %{name}.
 
 %prep
-%setup -q -n %{name}-%{version}/upstream
-%patch0 -p1
+%autosetup -p1 -n %{name}-%{version}/upstream
 
 %build
 ./autogen.sh
