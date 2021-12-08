@@ -1,6 +1,6 @@
 [submodule "upstream"]
 	path = upstream
-	url = https://git.sailfishos.org/mirror/nano.git
+	url = https://github.com/sailfishos-mirror/nano.git
 [submodule "gnulib"]
 	path = gnulib
-	url = https://git.sailfishos.org/mirror/gnulib.git 
+	url = https://github.com/sailfishos-mirror/gnulib.git 
