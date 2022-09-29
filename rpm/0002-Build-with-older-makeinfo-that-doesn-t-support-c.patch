@@ -1,0 +1,22 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Pekka Vuorela <pekka.vuorela@jolla.com>
+Date: Thu, 29 Sep 2022 12:31:52 +0300
+Subject: [PATCH] Build with older makeinfo that doesn't support -c
+
+Partially reverts commit c0a52372f1d3ff06d5ad63e63cb7913ff992ce5f.
+---
+ doc/Makefile.am | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/doc/Makefile.am b/doc/Makefile.am
+index 08cccac9..13227a70 100644
+--- a/doc/Makefile.am
++++ b/doc/Makefile.am
+@@ -28,6 +28,6 @@ info_TEXINFOS = nano.texi
+ BUILT_SOURCES += nano.html
+ dist_html_DATA += nano.html
+ 
+-AM_MAKEINFOHTMLFLAGS = --no-split -c HEADERS=0
++AM_MAKEINFOHTMLFLAGS = --no-split
+ 
+ EXTRA_DIST = $(BUILT_SOURCES) $(info_TEXINFOS)

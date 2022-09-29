@@ -1,6 +1,6 @@
-From 5af95ab049da459f6c86f579a552edb5a2ef1123 Mon Sep 17 00:00:00 2001
-From: Matti Kosola <matti.kosola@jolla.com>
-Date: Thu, 1 Aug 2019 08:31:45 +0000
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Pekka Vuorela <pekka.vuorela@jolla.com>
+Date: Thu, 29 Sep 2022 12:07:37 +0300
 Subject: [PATCH] autogen: Do not fetch sources at the build time
 
 Use git submodule and copy gnulib sources instead of
@@ -8,33 +8,31 @@ fetching build time.
 
 Signed-off-by: Matti Kosola <matti.kosola@jolla.com>
 ---
- autogen.sh | 11 +----------
- 1 file changed, 1 insertion(+), 10 deletions(-)
+ autogen.sh | 12 +-----------
+ 1 file changed, 1 insertion(+), 11 deletions(-)
 
 diff --git a/autogen.sh b/autogen.sh
-index 6ad1298..4c885e1 100755
+index d66f3cd6..49329bb1 100755
 --- a/autogen.sh
 +++ b/autogen.sh
-@@ -27,18 +27,9 @@ modules="
+@@ -28,19 +28,9 @@ modules="
  	wctype-h
  	wcwidth
  "
 -
 -# Make sure the local gnulib git repo is up-to-date.
  if [ ! -d "gnulib" ]; then
--	git clone --depth=123 ${gnulib_url}
+-	git clone --depth=1111 ${gnulib_url}
 -fi
 -cd gnulib >/dev/null || exit 1
 -curr_hash=$(git log -1 --format=%H)
 -if [ "${gnulib_hash}" != "${curr_hash}" ]; then
+-	echo "Pulling..."
 -	git pull
--	git checkout -f ${gnulib_hash}
+-	git checkout --force ${gnulib_hash}
 +       cp -lr ../gnulib .
  fi
 -cd .. >/dev/null || exit 1
  
- rm -rf lib
- ./gnulib/gnulib-tool \
--- 
-1.8.3-rc3
-
+ echo "Autopoint..."
+ autopoint --force
