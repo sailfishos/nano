@@ -1,12 +1,13 @@
 Name:       nano
 Summary:    A small text editor
-Version:    2.8.5
+Version:    6.4
 Release:    1
 License:    GPLv3
 URL:        http://www.nano-editor.org
 Source0:    %{name}-%{version}.tar.bz2
 Patch0:     0001-autogen-Do-not-fetch-sources-at-the-build-time.patch
-BuildRequires:  pkgconfig(ncurses)
+Patch1:     0002-Build-with-older-makeinfo-that-doesn-t-support-c.patch
+BuildRequires:  pkgconfig(ncursesw)
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  gettext-devel
@@ -32,10 +33,9 @@ Man and info pages for %{name}.
 ./autogen.sh
 %configure
 
-make %{?_smp_mflags}
+%make_build
 
 %install
-rm -rf %{buildroot}
 %make_install
 
 rm -f %{buildroot}%{_infodir}/dir
